@@ -2,7 +2,7 @@ name: ci-push docker image
 
 on:
   push:
-    branches: ['main']
+    branches: ['master']
 
 jobs:
   docker:
