@@ -9,6 +9,7 @@ WORKDIR /home/app/backend
 
 # will execute npm install in /home/app/backend because of WORKDIR
 RUN npm install
+RUN npm install -g nodemon
 
 WORKDIR /home/app
 
