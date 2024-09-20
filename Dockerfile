@@ -1,0 +1,23 @@
+FROM node:13-alpine
+
+RUN mkdir -p /home/app
+
+COPY . /home/app
+
+# set default dir so that next commands executes in /home/app dir
+WORKDIR /home/app/backend
+
+# will execute npm install in /home/app/backend because of WORKDIR
+RUN npm install
+
+WORKDIR /home/app
+
+RUN npm install
+
+# Build the frontend
+RUN npm run build
+
+EXPOSE 3000
+
+
+CMD ["sh", "-c", "cd /home/app/backend && nodemon server & cd home/app && npm start"]
