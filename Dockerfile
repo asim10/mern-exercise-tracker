@@ -21,4 +21,4 @@ RUN npm run build
 EXPOSE 3000
 
 
-CMD ["sh", "-c", "cd /home/app/backend && node server.js & cd /home/app && npm start"]
+CMD ["sh", "-c", "cd /home/app/backend && nodemon server & cd /home/app && npm start"]
